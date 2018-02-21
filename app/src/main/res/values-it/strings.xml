@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings">Impostazioni</string>
+    <string name="italian">Italiano</string>
+    <string name="english">Inglese</string>
+    <string name="select_files">Seleziona file</string>
+    <string name="number">Numero</string>
+    <string name="set_number">Imposta numero</string>
+    <string name="order">Ordine</string>
+    <string name="sequential">Sequenziale</string>
+    <string name="random">Casuale</string>
+    <string name="s_in">%s in</string>
+</resources>

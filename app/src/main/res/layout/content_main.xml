@@ -1,165 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.iceproject.mindthegap.MainActivity"
-    tools:showIn="@layout/activity_main">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <include
-        android:id="@+id/cardQuestions"
-        layout="@layout/card_language"
-        android:layout_width="0dp"
+    <android.support.constraint.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@id/gv0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:padding="10dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.iceproject.mindthegap.MainActivity"
+        tools:showIn="@layout/activity_main">
 
-    <android.support.constraint.Guideline
-        android:id="@+id/gv0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.4" />
+        <include
+            android:id="@+id/cardQuestions"
+            layout="@layout/card_language"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/gv0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <android.support.constraint.Guideline
-        android:id="@+id/gv1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.6" />
+        <android.support.constraint.Guideline
+            android:id="@+id/gv0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/gv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6" />
 
 
-    <include
-        android:id="@+id/cardAnswers"
-        layout="@layout/card_language"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/gv1"
-        app:layout_constraintTop_toTopOf="parent" />
+        <include
+            android:id="@+id/cardAnswers"
+            layout="@layout/card_language"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/gv1"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/round_button"
-        android:src="@drawable/ic_sync"
-        app:layout_constraintBottom_toBottomOf="@id/cardAnswers"
-        app:layout_constraintEnd_toStartOf="@id/cardAnswers"
-        app:layout_constraintStart_toEndOf="@id/cardQuestions"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_button"
+            android:src="@drawable/ic_sync"
+            app:layout_constraintBottom_toBottomOf="@id/cardAnswers"
+            app:layout_constraintEnd_toStartOf="@id/cardAnswers"
+            app:layout_constraintStart_toEndOf="@id/cardQuestions"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnSelectFiles"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/select_files"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/cardAnswers" />
+        <Button
+            android:id="@+id/btnSelectFiles"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/select_files"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/cardAnswers" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txvFiles"
-        android:text="0 selected"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@id/btnSelectFiles"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <TextView
+            android:id="@+id/txvFiles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="0 selected"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/btnSelectFiles"
+            app:layout_constraintEnd_toEndOf="@id/toggleBtnOrder" />
 
-    <!--<ToggleButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="switch"
-        />-->
+        <!--<ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="switch"
+            />-->
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/set_number"
-        android:onClick="setNumber"
-        android:id="@+id/btnSetNumber"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/btnSelectFiles"
-        app:layout_constraintStart_toStartOf="@id/btnSelectFiles"
-        style="@style/Widget.AppCompat.Button.Colored"/>
+        <ImageButton
+            android:id="@+id/btnMinus"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:maxWidth="48dp"
+            android:minWidth="36dp"
+            android:padding="3dp"
+            android:src="@drawable/ic_remove"
+            app:layout_constraintStart_toStartOf="@id/cardQuestions"
+            app:layout_constraintTop_toBottomOf="@id/txvSetNumber" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBaseline_toBaselineOf="@id/btnSetNumber"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-        android:textStyle="bold"
-        android:id="@+id/txvVocs"
-        android:text="@string/d_vocs"/>
+        <com.xw.repo.BubbleSeekBar
+            android:id="@+id/bsbWordsNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:bsb_is_float_type="false"
+            app:bsb_max="5000"
+            app:bsb_section_text_position="bottom_sides"
+            app:layout_constraintBottom_toBottomOf="@id/btnMinus"
+            app:layout_constraintEnd_toStartOf="@id/btnPlus"
+            app:layout_constraintStart_toEndOf="@id/btnMinus"
+            app:layout_constraintTop_toTopOf="@id/btnMinus" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="4dp"
-        android:text="@string/order"
-        android:textColor="@color/colorAccent"
-        app:layout_constraintBaseline_toBaselineOf="@id/toggleBtnOrder"/>
+        <ImageButton
+            android:id="@+id/btnPlus"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="48dp"
+            android:minWidth="36dp"
+            android:padding="3dp"
+            android:src="@drawable/ic_add"
+            app:layout_constraintEnd_toEndOf="@id/cardAnswers"
+            app:layout_constraintTop_toTopOf="@id/btnMinus" />
 
-    <ToggleButton
-        android:id="@+id/toggleBtnOrder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/btnSetNumber"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textOff="@string/in_order"
-        android:textOn="@string/shuffle" />
 
-    <!--<Switch
-        android:id="@+id/switchSelectionByNumber"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/select_by_number"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-        android:textColor="@color/colorAccent"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnSelectFiles" />-->
+        <TextView
+            android:id="@+id/txvSetNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:onClick="setNumber"
+            android:text="@string/set_number"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/btnSelectFiles"
+            app:layout_constraintTop_toBottomOf="@id/btnSelectFiles" />
 
-    <!--<RelativeLayout
-        android:id="@+id/relLNumber"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/switchSelectionByNumber"
-        app:layout_constraintTop_toBottomOf="@id/switchSelectionByNumber">
+        <TextView
+            android:id="@+id/txvWords"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 selected"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/txvSetNumber"
+            app:layout_constraintEnd_toEndOf="@id/txvFiles" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/number"
+            android:text="@string/order"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
             android:textColor="@color/colorAccent"
             android:textStyle="bold"
-            android:layout_centerVertical="true"/>
+            app:layout_constraintBaseline_toBaselineOf="@id/toggleBtnOrder"
+            app:layout_constraintStart_toStartOf="@id/txvSetNumber" />
 
-        <Button
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        <ToggleButton
+            android:id="@+id/toggleBtnOrder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:text="500" />
+            android:layout_marginTop="10dp"
+            android:textOff="@string/sequential"
+            android:textOn="@string/random"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnPlus" />
 
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toggleBtnOrder" />
 
-    </RelativeLayout>-->
-
-
-</android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>

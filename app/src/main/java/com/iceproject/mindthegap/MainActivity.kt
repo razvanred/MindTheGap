@@ -1,6 +1,5 @@
 package com.iceproject.mindthegap
 
-import android.app.AlertDialog
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -9,13 +8,12 @@ import android.view.MenuItem
 import android.view.View
 import com.iceproject.mindthegap.model.Language
 import com.iceproject.mindthegap.model.LanguageCard
+import com.xw.repo.BubbleSeekBar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var langAnswers: Language
-    private lateinit var langQuestions: Language
     private lateinit var arrayCard: Array<LanguageCard>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,8 +21,30 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        arrayCard = arrayOf(LanguageCard(cardQuestions,Language.IT), LanguageCard(cardAnswers,Language.EN))
+        txvWords.text = resources.getQuantityString(R.plurals.d_word, 0, 0)
 
+        arrayCard = arrayOf(LanguageCard(cardQuestions, Language.IT), LanguageCard(cardAnswers, Language.EN))
+
+        inclContent.viewTreeObserver.addOnScrollChangedListener { bsbWordsNumber.correctOffsetWhenContainerOnScrolling() }
+
+        bsbWordsNumber.onProgressChangedListener = object : BubbleSeekBar.OnProgressChangedListener {
+
+            override fun getProgressOnFinally(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float) {}
+
+            override fun getProgressOnActionUp(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float) {
+                txvWords.text = resources.getQuantityString(R.plurals.d_word, progress, progress)
+            }
+
+            override fun onProgressChanged(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float) {}
+
+        }
+
+        btnPlus.setOnClickListener { }
+        btnMinus.setOnClickListener { bsbWordsNumber.setProgress(bsbWordsNumber.progressFloat - 1) }
+
+
+        cardQuestions.tag = arrayCard[0]
+        cardAnswers.tag = arrayCard[1]
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -48,10 +68,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun changeLanguage(view:View){
-        AlertDialog.Builder(this,android.R.style.Theme_Material_Dialog_Alert)
-                .setCancelable(false)
-                .show()
+    fun changeLanguage(view: View) {
+
+        val card = view.tag as LanguageCard
+
+        card.changeLanguage(if (view.tag.toString().toInt() == R.id.cardQuestions) cardAnswers else cardQuestions)
+
     }
 
     fun setNumber(view: View) {

@@ -5,11 +5,10 @@
     <string name="italian">Italian</string>
     <string name="english">English</string>
     <string name="select_files">Select files</string>
-    <string name="select_by_number">Select by number</string>
     <string name="number">Number</string>
     <string name="set_number">Set number</string>
-    <string name="d_vocs">%d vocs</string>
     <string name="order">Order</string>
-    <string name="in_order">In order</string>
-    <string name="shuffle">Shuffle</string>
+    <string name="sequential">Sequential</string>
+    <string name="random">Random</string>
+    <string name="s_in">%s in</string>
 </resources>

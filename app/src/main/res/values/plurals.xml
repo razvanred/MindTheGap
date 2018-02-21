@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="d_word">
+        <item quantity="one">%d word</item>
+        <item quantity="other">%d words</item>
+    </plurals>
+    <plurals name="answer">
+        <item quantity="one">Answer</item>
+        <item quantity="other">Answers</item>
+    </plurals>
+    <plurals name="question">
+        <item quantity="one">Question</item>
+        <item quantity="other">Questions</item>
+    </plurals>
+</resources>

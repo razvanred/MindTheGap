@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="d_word">
+        <item quantity="one">%d vocabolo</item>
+        <item quantity="other">%d vocaboli</item>
+    </plurals>
+    <plurals name="answer">
+        <item quantity="one">Risposta</item>
+        <item quantity="other">Risposte</item>
+    </plurals>
+    <plurals name="question">
+        <item quantity="one">Quesito</item>
+        <item quantity="other">Quesiti</item>
+    </plurals>
+</resources>
