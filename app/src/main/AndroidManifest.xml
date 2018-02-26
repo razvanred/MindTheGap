@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RunActivity"></activity>
+        <activity android:name=".RunActivity" />
+        <activity android:name=".SelectFilesActivity"></activity>
     </application>
 
 </manifest>

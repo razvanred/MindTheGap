@@ -11,4 +11,7 @@
     <string name="sequential">Sequential</string>
     <string name="random">Random</string>
     <string name="s_in">%s in</string>
+    <string name="edit">Edit</string>
+    <string name="file_d" translatable="false">FILE %d</string>
+    <string name="done">Done</string>
 </resources>

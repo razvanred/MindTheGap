@@ -8,6 +8,10 @@
         <item quantity="one">Risposta</item>
         <item quantity="other">Risposte</item>
     </plurals>
+    <plurals name="d_selected">
+        <item quantity="one">%d selezionato</item>
+        <item quantity="other">%d selezionati</item>
+    </plurals>
     <plurals name="question">
         <item quantity="one">Quesito</item>
         <item quantity="other">Quesiti</item>

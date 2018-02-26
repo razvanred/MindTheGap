@@ -10,4 +10,6 @@
     <string name="sequential">Sequenziale</string>
     <string name="random">Casuale</string>
     <string name="s_in">%s in</string>
+    <string name="edit">Modifica</string>
+    <string name="done">Fatto</string>
 </resources>

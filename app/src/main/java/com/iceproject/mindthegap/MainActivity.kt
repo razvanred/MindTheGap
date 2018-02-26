@@ -1,5 +1,6 @@
 package com.iceproject.mindthegap
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -11,6 +12,7 @@ import com.iceproject.mindthegap.model.LanguageCard
 import com.xw.repo.BubbleSeekBar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         txvWords.text = resources.getQuantityString(R.plurals.d_word, 0, 0)
+        txvFiles.text = resources.getQuantityString(R.plurals.d_selected, 0, 0)
 
         arrayCard = arrayOf(LanguageCard(cardQuestions, Language.IT), LanguageCard(cardAnswers, Language.EN))
 
@@ -29,18 +32,33 @@ class MainActivity : AppCompatActivity() {
 
         bsbWordsNumber.onProgressChangedListener = object : BubbleSeekBar.OnProgressChangedListener {
 
-            override fun getProgressOnFinally(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float) {}
+            override fun getProgressOnFinally(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float) {
+                txvWords.text = resources.getQuantityString(R.plurals.d_word, progress, progress)
+            }
 
             override fun getProgressOnActionUp(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float) {
                 txvWords.text = resources.getQuantityString(R.plurals.d_word, progress, progress)
             }
 
-            override fun onProgressChanged(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float) {}
+            override fun onProgressChanged(bubbleSeekBar: BubbleSeekBar?, progress: Int, progressFloat: Float) {
+                if (progress == bsbWordsNumber.min.roundToInt()) {
+                    fab.hide()
+                    btnMinus.isEnabled = false
+                } else {
+                    fab.show()
+                    btnMinus.isEnabled = true
+                    btnPlus.isEnabled = progress != bsbWordsNumber.max.roundToInt()
+                }
+            }
 
         }
 
-        btnPlus.setOnClickListener { }
-        btnMinus.setOnClickListener { bsbWordsNumber.setProgress(bsbWordsNumber.progressFloat - 1) }
+        btnPlus.setOnClickListener {
+            bsbWordsNumber.setProgress((bsbWordsNumber.progress + 1).toFloat())
+        }
+        btnMinus.setOnClickListener {
+            bsbWordsNumber.setProgress((bsbWordsNumber.progress - 1).toFloat())
+        }
 
 
         cardQuestions.tag = arrayCard[0]
@@ -76,7 +94,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun setNumber(view: View) {
-
+    fun setFiles(view: View) {
+        startActivityForResult(Intent(this, SelectFilesActivity::class.java), 0)
     }
 }

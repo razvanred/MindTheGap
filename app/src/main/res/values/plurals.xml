@@ -8,6 +8,9 @@
         <item quantity="one">Answer</item>
         <item quantity="other">Answers</item>
     </plurals>
+    <plurals name="d_selected">
+        <item quantity="other">%d selected</item>
+    </plurals>
     <plurals name="question">
         <item quantity="one">Question</item>
         <item quantity="other">Questions</item>
