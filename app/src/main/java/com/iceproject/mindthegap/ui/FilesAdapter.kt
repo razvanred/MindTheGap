@@ -19,7 +19,7 @@ class FilesAdapter(private val listener: ClickListener, private val status: Arra
 
         Log.d(FilesAdapter::class.java.simpleName, "CREATING")
 
-        return ViewHolder(LayoutInflater.from(parent?.context).inflate(R.layout.item_file, parent, false), listener)
+        return ViewHolder(LayoutInflater.from(parent?.context).inflate(R.layout.item_file, parent, false), listener, status)
     }
 
     override fun getItemCount() = 24
@@ -34,23 +34,24 @@ class FilesAdapter(private val listener: ClickListener, private val status: Arra
         holder?.button?.isEnabled = status[position] == null || status[position]!!
     }
 
-    class ViewHolder(layout: View, listener: ClickListener) : RecyclerView.ViewHolder(layout), View.OnClickListener {
+    class ViewHolder(layout: View, listener: ClickListener, private val status: Array<Boolean?>) : RecyclerView.ViewHolder(layout), View.OnClickListener {
 
         val checkBox: IndeterminateCheckBox = layout.findViewById(R.id.checkBoxFile)
         val button: Button = layout.findViewById(R.id.btnEdit)
         private val listenerRef = WeakReference<ClickListener>(listener)
 
         init {
-            layout.setOnClickListener(this)
+            //layout.setOnClickListener(this)
             checkBox.setOnClickListener(this)
+            button.setOnClickListener(this)
         }
-
 
         override fun onClick(p0: View?) {
             if (p0?.id == checkBox.id) {
                 button.isEnabled = (p0 as IndeterminateCheckBox).isChecked
-            }
-            listenerRef.get()?.onPositionClicked(adapterPosition)
+                status[adapterPosition] = button.isEnabled
+            } else
+                listenerRef.get()?.onPositionClicked(adapterPosition)
         }
 
     }

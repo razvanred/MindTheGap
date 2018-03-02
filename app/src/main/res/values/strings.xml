@@ -14,4 +14,6 @@
     <string name="edit">Edit</string>
     <string name="file_d" translatable="false">FILE %d</string>
     <string name="done">Done</string>
+
+    <string name="extra_index">cloud.mindthegap.INDEX_PASSING</string>
 </resources>

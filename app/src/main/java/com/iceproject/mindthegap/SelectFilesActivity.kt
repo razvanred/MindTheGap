@@ -29,7 +29,9 @@ class SelectFilesActivity : AppCompatActivity() {
 
         recycler.adapter = FilesAdapter(object : ClickListener {
             override fun onPositionClicked(position: Int) {
-
+                val toPass = Intent(this@SelectFilesActivity, SelectWordsActivity::class.java)
+                toPass.putExtra(getString(R.string.extra_index), position)
+                startActivityForResult(intent, 0)
             }
         }, booleanArray)
     }

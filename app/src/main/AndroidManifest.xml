@@ -20,7 +20,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".RunActivity" />
-        <activity android:name=".SelectFilesActivity" />
+        <activity
+            android:name=".SelectFilesActivity"
+            android:label="@string/select_files" />
         <activity android:name=".SelectWordsActivity"></activity>
     </application>
 

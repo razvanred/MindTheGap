@@ -1,51 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="8dp">
+    android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btnQuestion"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="0dp"
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello"
-        app:layout_constraintEnd_toEndOf="@id/gv0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:padding="8dp">
 
-    <android.support.constraint.Guideline
-        android:id="@+id/gv0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.4" />
+        <ImageView
+            android:id="@+id/imgQuestions"
+            android:layout_width="48dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/flag_it"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <android.support.constraint.Guideline
-        android:id="@+id/gv1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.8" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="ciao"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/imgQuestions"
+            app:layout_constraintEnd_toStartOf="@id/ck"
+            app:layout_constraintStart_toEndOf="@id/imgQuestions"
+            app:layout_constraintTop_toTopOf="@id/imgQuestions" />
 
-    <Button
-        android:id="@+id/btnAnswer"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="world"
-        app:layout_constraintEnd_toEndOf="@id/gv1"
-        app:layout_constraintStart_toStartOf="@id/gv0"
-        app:layout_constraintTop_toTopOf="@id/btnQuestion" />
+        <ImageView
+            android:id="@+id/imgAnswers"
+            android:layout_width="48dp"
+            android:layout_height="32dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/flag_uk"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/imgQuestions"
+            app:layout_constraintTop_toBottomOf="@id/imgQuestions" />
 
-    <CheckBox
-        android:id="@+id/ck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/btnQuestion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/gv1"
-        app:layout_constraintTop_toTopOf="@id/btnQuestion" />
+        <TextView
+            android:id="@+id/txvAnswers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="hello"
+            app:layout_constraintBottom_toBottomOf="@id/imgAnswers"
+            app:layout_constraintEnd_toStartOf="@id/ck"
+            app:layout_constraintStart_toEndOf="@id/imgAnswers"
+            app:layout_constraintTop_toTopOf="@id/imgAnswers" />
 
-</android.support.constraint.ConstraintLayout>
+        <CheckBox
+            android:id="@+id/ck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>
