@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import com.iceproject.mindthegap.ui.ClickListener
 import com.iceproject.mindthegap.ui.FilesAdapter
 import kotlinx.android.synthetic.main.activity_select_files.*
 
@@ -19,7 +20,18 @@ class SelectFilesActivity : AppCompatActivity() {
 
         recycler.layoutManager = LinearLayoutManager(this)
         recycler.setHasFixedSize(true)
-        recycler.adapter = FilesAdapter()
+
+        val booleanArray = arrayOfNulls<Boolean>(24)
+
+        for (i in 0 until booleanArray.size)
+            booleanArray[i] = false
+
+
+        recycler.adapter = FilesAdapter(object : ClickListener {
+            override fun onPositionClicked(position: Int) {
+
+            }
+        }, booleanArray)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
