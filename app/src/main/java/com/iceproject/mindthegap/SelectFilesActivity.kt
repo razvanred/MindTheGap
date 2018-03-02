@@ -33,7 +33,11 @@ class SelectFilesActivity : AppCompatActivity() {
             android.R.id.home -> onBackPressed()
             R.id.actDone -> {
                 val toReturn = Intent()
-                //TODO put boolean array
+                val booleanArray = BooleanArray((recycler.adapter as FilesAdapter).itemCount)
+
+                for (i in 0 until booleanArray.size)
+                    booleanArray[i] = false
+
                 setResult(Activity.RESULT_OK, toReturn)
                 finish()
             }
