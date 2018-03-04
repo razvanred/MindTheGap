@@ -15,5 +15,8 @@
     <string name="file_d" translatable="false">FILE %d</string>
     <string name="done">Done</string>
 
-    <string name="extra_index">cloud.mindthegap.INDEX_PASSING</string>
+    <string name="extra_index" translatable="false">cloud.iceproject.mindthegap.INDEX_PASSING</string>
+
+    <string name="pref_lang_questions" translatable="false">cloud.iceproject.mindthegap.QUESTIONS_LANGUAGE_ID</string>
+    <string name="pref_lang_answers" translatable="false">cloud.iceproject.mindthegap.ANSWERS_LANGUAGE_ID</string>
 </resources>

@@ -20,13 +20,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/txvQuestions"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text="ciao"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/imgQuestions"
-            app:layout_constraintEnd_toStartOf="@id/ck"
+            app:layout_constraintEnd_toStartOf="@id/cbxSelected"
             app:layout_constraintStart_toEndOf="@id/imgQuestions"
             app:layout_constraintTop_toTopOf="@id/imgQuestions" />
 
@@ -48,12 +49,12 @@
             android:padding="8dp"
             android:text="hello"
             app:layout_constraintBottom_toBottomOf="@id/imgAnswers"
-            app:layout_constraintEnd_toStartOf="@id/ck"
+            app:layout_constraintEnd_toStartOf="@id/cbxSelected"
             app:layout_constraintStart_toEndOf="@id/imgAnswers"
             app:layout_constraintTop_toTopOf="@id/imgAnswers" />
 
         <CheckBox
-            android:id="@+id/ck"
+            android:id="@+id/cbxSelected"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
